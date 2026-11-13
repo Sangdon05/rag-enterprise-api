@@ -1,12 +1,12 @@
 from datetime import UTC, datetime
-from typing import Any, Generic, TypeVar
+from typing import Any, TypeVar
 
 from pydantic import BaseModel, Field
 
 T = TypeVar("T")
 
 
-class APIResponse(BaseModel, Generic[T]):
+class APIResponse[T](BaseModel):
     success: bool = Field(description="처리 성공/실패 여부")
     code: str | None = Field(
         None, description="비즈니스 식별 코드 (성공 시 OK, 실패 시 에러코드"

@@ -1,11 +1,11 @@
-from typing import Generic, TypeVar
+from typing import TypeVar
 
 from fastapi import status
 
 T = TypeVar("T")
 
 
-class SharedException(Exception, Generic[T]):
+class SharedException[T](Exception):
     def __init__(
         self,
         message: str,

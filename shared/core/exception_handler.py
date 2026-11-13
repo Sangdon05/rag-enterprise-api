@@ -29,7 +29,7 @@ def register_exception_halders(app: FastAPI) -> None:
     async def validation_exception_handler(
         request: Request, exc: RequestValidationError
     ):
-        errors_map: dict[str, list[str]] = []
+        errors_map: dict[str, list[str]] = {}
         for error in exc.errors():
             loc = ".".join(str(item) for item in error["loc"] if item != "body")
             errors_map.setdefault(loc or "non_field_errors", []).append(error["msg"])
