@@ -1,4 +1,5 @@
-from typing import Any, Protocol
+from types import TracebackType
+from typing import Any, Protocol, Self
 
 import psycopg
 from langchain.chat_models import init_chat_model
@@ -47,6 +48,13 @@ class DBConnection(Protocol):
     def commit(self) -> None: ...
     def rollback(self) -> None: ...
     def close(self) -> None: ...
+    def __enter__(self) -> Self: ...
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_val: BaseException | None,
+        exc_tb: TracebackType | None,
+    ) -> None: ...
 
 
 def get_raw_db_connection() -> DBConnection:
