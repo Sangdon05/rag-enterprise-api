@@ -7,12 +7,11 @@ logger = get_logger(__name__)
 
 
 def _fetch_existing_hashes(doc_id: str) -> set[str]:
-    query = (
-        "SELECT e.cmetadata->>'content_hash'"
-        "FROM langchain_pg_embedding e"
-        "JOIN langchain_pg_collection c ON e.collection_id = c.uuid"
-        "WHERE c.name = %s AND e.cmetadata->>'doc_id' = %s"
-    )
+    query = """SELECT e.cmetadata->>'content_hash'
+FROM langchain_pg_embedding e
+JOIN langchain_pg_collection c ON e.collection_id = c.uuid
+WHERE c.name = %s AND e.cmetadata->>'doc_id' = %s
+"""
     existing: set[str] = set()
     try:
         with get_raw_db_connection() as conn, conn.cursor() as cur:
