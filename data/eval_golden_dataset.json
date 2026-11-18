@@ -1,0 +1,38 @@
+[
+  {
+    "question_id": "QA-001",
+    "query_type": "exact_keyword",
+    "question": "모델코드 16ZD90SP-KR0193 노트북의 정확한 무게, GPU, RAM 용량과 가격을 알려줘",
+    "ground_truth": "LG전자 그램 프로 16 (모델코드 16ZD90SP-KR0193, 상품코드 SKU-0193-16ZD90SP)은 무게 1.19kg, 코어 울트라7, RTX4070 8GB, 64GB RAM, 512GB NVMe 스펙을 갖추고 있으며 가격은 1,500,000원이다.",
+    "category": "노트북",
+    "max_budget": 1800000,
+    "activity_keywords": [
+      "16ZD90SP-KR0193",
+      "그램 프로 16 64GB"
+    ]
+  },
+  {
+    "question_id": "QA-002",
+    "query_type": "single_hop",
+    "question": "50만원 이하 예산으로 맥북 연결 및 KVM 스위치, 피벗 스탠드가 지원되는 LG 27인치 4K 모니터 추천해줘",
+    "ground_truth": "LG전자 울트라파인 4K UHD (모델코드 27UQ850V-KR0002, 가격 460,000원) 또는 27UQ850V-KR0058 (가격 350,000원) 모델이 27인치 4K IPS Black 패널과 피벗/엘리베이션 스탠드를 지원하여 적합하다.",
+    "category": "모니터",
+    "max_budget": 500000,
+    "activity_keywords": [
+      "27UQ850V-KR0002",
+      "27인치 4K 피벗 모니터"
+    ]
+  },
+  {
+    "question_id": "QA-003",
+    "query_type": "multi_hop",
+    "question": "노트북에 케이블 하나만 꽂아서 듀얼 모니터와 유선랜을 연결할 18포트 확장 칼디짓 TS4 도킹스테이션 추천해줘",
+    "ground_truth": "칼디짓 TS4 썬더볼트4 독 라인업(예: TS4-US-AMZ-KR0032, TS4-US-AMZ-KR0064 등)은 18포트 확장, 썬더볼트4/USB4 40Gbps, 90W~98W PD 충전 및 듀얼 4K 60Hz 출력을 지원하여 케이블 하나로 모든 주변기기를 연결할 수 있다.",
+    "category": "도킹스테이션",
+    "max_budget": 450000,
+    "activity_keywords": [
+      "TS4-US-AMZ",
+      "칼디짓 TS4 18포트"
+    ]
+  }
+]

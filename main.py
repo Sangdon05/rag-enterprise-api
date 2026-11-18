@@ -4,6 +4,7 @@ from pathlib import Path
 from fastapi import FastAPI
 
 from feature.chatbot.router import router as chatbot_router
+from feature.evaluation.router import router as evaluation_router
 from feature.recommend.router import router as recommend_router
 from shared.core.config import settings
 from shared.core.exception_handler import register_exception_halders
@@ -50,3 +51,4 @@ register_exception_halders(app)
 
 app.include_router(chatbot_router)
 app.include_router(recommend_router)
+app.include_router(evaluation_router)
